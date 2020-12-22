@@ -35,7 +35,7 @@ const StartGame = (props) => {
       Alert.alert(
         'Número invalido', 
         'Debes ingresar un numero entre 1 y 99', 
-        [{text: 'Okay', style: 'destructive', onPress: resetInputHandler}]
+        [{text: 'Ingresar de nuevogit ', style: 'destructive', onPress: resetInputHandler}]
         )
       return;
     };
@@ -47,7 +47,12 @@ const StartGame = (props) => {
   let confirmedOutput;
 
   if (confirmed) {
-    confirmedOutput = <NumberContainer>{selectedNumber}</NumberContainer>
+    confirmedOutput = (
+      <GameCard style={styles.summaryCard}>
+         <NumberContainer>{selectedNumber}</NumberContainer>
+         <Button title='Iniciar Juego' color= {Colors.secondary} onPress={() => props.onStartGame(selectedNumber)}/>
+      </GameCard>
+    )
   }
 
   return (

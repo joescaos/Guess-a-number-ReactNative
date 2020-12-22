@@ -7,7 +7,6 @@ const NumberContainer = props => {
         <View style={styles.numberContainer}>
             <Text>Número elegido</Text>
             <Text style={styles.number}>{props.children}</Text>
-            <Button title='Iniciar Juego' color= {Colors.secondary}/>
         </View>
     )
 }
